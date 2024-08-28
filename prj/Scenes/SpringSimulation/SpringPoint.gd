@@ -24,7 +24,7 @@ func _input(event):
 func _physics_process(delta : float):
 	if drag:
 		drag=false
-		mouse_pos.x=450
+		mouse_pos.x=304
 		mouse_pos.y=-55
 		global_position = mouse_pos
 		start_position = mouse_pos

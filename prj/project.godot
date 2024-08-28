@@ -10,12 +10,12 @@ config_version=4
 
 [application]
 
-config/name="MortalClicker"
+config/name="SF_Clicker"
 run/main_scene="res://Scenes/Main/Main.tscn"
 
 [autoload]
 
-Global="*res://global.gd"
+G="*res://global.gd"
 
 [display]
 
@@ -23,7 +23,7 @@ window/size/width=608
 window/size/height=1080
 window/dpi/allow_hidpi=true
 window/stretch/mode="2d"
-window/stretch/aspect="expand"
+window/stretch/aspect="keep"
 
 [gui]
 

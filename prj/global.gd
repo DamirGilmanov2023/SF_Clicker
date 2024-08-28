@@ -1,47 +1,46 @@
 extends Node
 
-var Sonya_life:int=300
-var Milina_life:int=500
-var Jade_life:int=800
-var Kitana_life:int=1000
-var Sindel_life:int=1200
-var Tanya_life:int=1500
-var Frost_life:int=1800
-var Cetrion_life:int=2000
-var Skarlet_life:int=2200
-var Ferra_life:int=2400
+var S={"S1_life":10,
+	"S2_life":10,
+	"S3_life":10,
+	"S4_life":10,
+	"S5_life":10,
+	"S6_life":10,
+	"S7_life":10,
+	"S8_life":10,
+	"S9_life":10,
+	"S10_life":10,
+	"S11_life":10,
+	"S12_life":10,
+	"S13_life":10,
+	"S14_life":10,
+	"S15_life":10,
+	"S16_life":10,
+	"S17_life":10,
+	"S18_life":10,
+	
+	"S1_max_life":300,
+	"S2_max_life":500,
+	"S3_max_life":800,
+	"S4_max_life":1000,
+	"S5_max_life":1200,
+	"S6_max_life":1500,
+	"S7_max_life":1800,
+	"S8_max_life":2000,
+	"S9_max_life":2200,
+	"S10_max_life":2400,
+	"S11_max_life":2400,
+	"S12_max_life":2400,
+	"S13_max_life":2400,
+	"S14_max_life":2400,
+	"S15_max_life":2400,
+	"S16_max_life":2400,
+	"S17_max_life":2400,
+	"S18_max_life":2400,
+	
+	"S1":false
 
-var Sonya_max_life:int=300
-var Milina_max_life:int=500
-var Jade_max_life:int=800
-var Kitana_max_life:int=1000
-var Sindel_max_life:int=1200
-var Tanya_max_life:int=1500
-var Frost_max_life:int=1800
-var Cetrion_max_life:int=2000
-var Skarlet_max_life:int=2200
-var Ferra_max_life:int=2400
-
-var S01=true
-var S02=true
-var S03=true
-var S04=true
-var S05=true
-var S06=true
-var S07=true
-var S08=true
-var S09=true
-var S10=true
-var S11=true
-var S12=true
-var S13=true
-var S14=true
-var S15=true
-var S16=true
-var S17=true
-var S18=true
-
-
+	}
 
 var step:int=1
 
@@ -49,7 +48,9 @@ var score:int=0
 
 var mass_add=[100,300,500,1000,2000,3000,5000]
 
+var current_level
 
 func _ready():
-	pass # Replace with function body.
+	for i in range(2,19):
+		S["S"+str(i)]=true
 

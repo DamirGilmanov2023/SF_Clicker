@@ -23,24 +23,18 @@ font_data = ExtResource( 3 )
 [node name="ui" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -235.0
-margin_top = -1023.0
-margin_right = -235.0
-margin_bottom = -1023.0
-rect_scale = Vector2( 2, 2 )
-__meta__ = {
-"_edit_lock_": true
-}
+margin_left = -155.0
+margin_top = -906.0
+margin_right = -155.0
+margin_bottom = -906.0
+rect_scale = Vector2( 1.75903, 1.77872 )
 
 [node name="button_back" type="TextureButton" parent="."]
-margin_left = 17.0
-margin_top = 16.0
-margin_right = 127.0
-margin_bottom = 126.0
+margin_left = 19.7682
+margin_top = 50.2695
+margin_right = 129.768
+margin_bottom = 160.27
 texture_normal = ExtResource( 5 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="progress" type="TextureProgress" parent="."]
 margin_left = 77.0
@@ -50,9 +44,6 @@ margin_bottom = 1233.0
 value = 100.0
 texture_under = ExtResource( 1 )
 texture_progress = ExtResource( 2 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="button_add" type="TextureButton" parent="."]
 margin_left = 472.0
@@ -62,9 +53,6 @@ margin_bottom = 1144.0
 disabled = true
 texture_normal = ExtResource( 6 )
 texture_disabled = ExtResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="label_add" type="Label" parent="."]
 margin_left = 477.0
@@ -76,17 +64,11 @@ text = "200
 клик +2"
 align = 1
 valign = 1
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Label" type="Sprite" parent="."]
 position = Vector2( 23, 1067 )
 texture = ExtResource( 7 )
 offset = Vector2( 78, 39 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="score" type="Label" parent="."]
 margin_left = 28.0
@@ -97,9 +79,6 @@ custom_fonts/font = SubResource( 5 )
 text = "10"
 align = 1
 valign = 1
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="life" type="Label" parent="."]
 margin_left = 82.0
@@ -110,6 +89,3 @@ custom_fonts/font = SubResource( 6 )
 text = "999"
 align = 1
 valign = 1
-__meta__ = {
-"_edit_lock_": true
-}
