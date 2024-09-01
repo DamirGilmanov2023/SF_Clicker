@@ -52,6 +52,6 @@ var current_level
 
 func _ready():
 	for i in range(2,19):
-		S["S"+str(i)]=false
+		S["S"+str(i)]=true
 
 var timer=65
