@@ -4,9 +4,31 @@ onready var spring_point = $SpringSim/SpringPoint
 onready var breasts = $Body/Breasts
 onready var button_back = $ui/button_back
 onready var button_add = $ui/button_add
-
+onready var particle=preload("res://Scenes/heart_particles/heart.tscn")
+var player
 func _ready():
-	print(G.S["S"+G.current_level+"_max_life"])
+	var c=int(G.current_level)
+	print(c)
+	if c>15:
+		c=c-15
+	elif c>10:
+		c=c-10
+	elif c>5:
+		c=c-5
+	print(c)
+	if c==1:
+		player=$Audio/Play1
+	elif c==2:
+		player=$Audio/Play2
+	elif c==3:
+		player=$Audio/Play3
+	elif c==4:
+		player=$Audio/Play4
+	elif c==5:
+		player=$Audio/Play5
+	player.playing=true
+	#print(G.S["S"+G.current_level+"_max_life"])
+	G.timer+=3
 	$ui/progress.max_value=G.S["S"+G.current_level+"_max_life"]
 	$ui/progress.value=G.S["S"+G.current_level+"_life"]
 	$ui/life.text=str(G.S["S"+G.current_level+"_life"])
@@ -34,6 +56,7 @@ func _physics_process(_delta):
 	mat.set_shader_param("spring_offset", o)
 	
 	if drag:
+		$heart/particl.emitting=true
 		drag=false
 		G.S["S"+G.current_level+"_life"]-=G.step
 		$ui/progress.value=G.S["S"+G.current_level+"_life"]
@@ -45,16 +68,15 @@ func _physics_process(_delta):
 		if G.S["S"+G.current_level+"_life"]<=0:
 			G.S["S"+G.current_level+"_max_life"]=5000
 			G.S["S"+G.current_level+"_life"]=5000
-			
-			
 			var num_cur=int(G.current_level)
 			if num_cur<18:
 				G.current_level=str(num_cur+1)
-				G.S["S"+G.current_level+"_disabled"]=false
-				print(G.current_level,G.S["S"+G.current_level+"_disabled"])
+				G.S["S"+G.current_level]=false
+				#print(G.current_level,G.S["S"+G.current_level])
 				get_tree().change_scene("res://Scenes/S"+G.current_level+"/S"+G.current_level+".tscn")
 			else:
-				get_tree().change_scene("res://Scenes/Main/Main.tscn")
+				G.current_level="1"
+				get_tree().change_scene("res://Scenes/S1/S1.tscn")
 		
 
 func _on_button_back_pressed():
@@ -78,10 +100,17 @@ func _on_Timer_timeout():
 	else:
 		#Показать рекламу
 		$rekl.visible=false
+		G.timer=65
 		$rekl/T.start()
 	
 func _on_T_timeout():
-	$rekl.visible=true
-	time=3
-	$rekl/Label.text="Реклама через "+str(time)
-	$rekl/Timer.start()
+	G.timer-=1
+	print(G.timer)
+	if G.timer<1:
+		$rekl.visible=true
+		time=3
+		$rekl/Label.text="Реклама через "+str(time)
+		$rekl/Timer.start()
+	else:
+		$rekl/T.start()
+	

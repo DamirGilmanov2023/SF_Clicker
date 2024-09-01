@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/heart_particles/heart.png" type="Texture" id=1]
+
+[sub_resource type="Gradient" id=8]
+offsets = PoolRealArray( 0, 0.547486, 1 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="Curve" id=9]
+max_value = 200.0
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[node name="heart" type="Node2D"]
+position = Vector2( 322, 501 )
+
+[node name="particl" type="CPUParticles2D" parent="."]
+position = Vector2( 1, -2 )
+emitting = false
+amount = 3
+one_shot = true
+texture = ExtResource( 1 )
+emission_shape = 1
+emission_sphere_radius = 92.0
+direction = Vector2( 100, 100 )
+spread = 100.0
+gravity = Vector2( 0, -80 )
+initial_velocity = 100.0
+initial_velocity_random = 1.0
+angular_velocity = 50.0
+angular_velocity_random = 1.0
+linear_accel = 100.0
+linear_accel_random = 1.0
+radial_accel = 10.0
+radial_accel_random = 1.0
+tangential_accel = 10.0
+tangential_accel_random = 1.0
+damping = 10.0
+damping_random = 1.0
+scale_amount_random = 1.0
+color_ramp = SubResource( 8 )
+anim_speed_curve = SubResource( 9 )
+anim_offset = 1.0
+anim_offset_random = 1.0
